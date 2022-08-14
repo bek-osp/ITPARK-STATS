@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap');
+@import url('./apperance.css');
+@font-face {
+    font-family: Digital;
+    src: url('./fonts/digital-7.ttf');
+}
+
+body {
+    font-family: 'Roboto Flex';
+    background: var(--body-bg);
+    color: var(--default-color);
+    margin: 0;
+    padding: 0;
+}
+
+.gradient-primary {
+    background: linear-gradient(90deg, #3D4EB6 0%, #61ADE1 100%) !important;
+}
+
+.gradient-purple {
+    background: linear-gradient(90deg, #5931C7 0%, #9F36D7 100%) !important;
+}
+
+.gradient-orange {
+    background: linear-gradient(90deg, #EC776A 0%, #F2C738 100%) !important;
+}
+
+.gradient-danger {
+    background: linear-gradient(90deg, #BD2B65 0%, #F85F66 100%) !important;
+}
+
+.gradient-success {
+    background: linear-gradient(180deg, #77C205 0%, #B3DF07 100%) !important;
+}
+
+.gradient-pink {
+    background: linear-gradient(180deg, #8C5EF8 0%, #BD80E0 100%) !important;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 0;
+}
+
+.right-column {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    flex-grow: 1;
+}
+
+.card {
+    background: var(--card-bg);
+    box-shadow: 3px 0 50px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    position: relative;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    font-weight: 700;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    bottom: 25px;
+}
+
+.card-body .title {
+    display: flex;
+    flex-grow: 0;
+    align-items: flex-start;
+    font-size: 20px;
+}
+
+.card-body .count {
+    display: flex;
+    flex-grow: 1;
+    align-items: flex-end;
+    font-size: 50px;
+}
+
+.card.timer .clock {
+    color: var(--default-color-300);
+    font-size: 60px;
+    font-family: Digital;
+    letter-spacing: 7px;
+}
+
+.card.timer .title {
+    display: flex;
+    color: var(--default-color-300);
+    flex-grow: 0;
+    align-items: flex-start;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.card.timer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer hr {
+    width: 570px;
+    height: 2px;
+    margin: 12px 0;
+    background: var(--default-color)000;
+    opacity: 0.2;
+    border: 0;
+    border-radius: 20px;
+}
+
+.branches {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.branches .bgpic {
+    position: absolute;
+    right: -20px;
+    bottom: -35px;
+}
+
+.branches .card-body .title {
+    color: var(--default-color);
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.branches .card-body .count {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--default-color-300);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 175px;
+    margin: 0 30px;
+}
+
+.app-logo {
+    width: 175px;
+    height: 57px;
+    background: var(--app-logo);
+    background-size: cover;
+}
+
+.logo hr {
+    width: 190px;
+    height: 2px;
+    margin: 12px 0;
+    background: var(--default-color)000;
+    opacity: 0.2;
+    border: 0;
+    border-radius: 20px;
+}
+
+.date {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.date .date-up {
+    margin-left: 10px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 21.9898px;
+    line-height: 26px;
+}
+
+.timer {
+    width: 832px;
+    height: 175px;
+    margin: 0 30px;
+}
+
+.branches {
+    width: 400px;
+    height: 175px;
+    margin: 0 30px;
+}
+
+.dates {
+    margin-top: 25px;
+}
+
+.dates .card {
+    display: flex;
+    width: 410px;
+    height: 185px;
+    margin: 0 18px;
+    overflow: hidden;
+    position: relative;
+}
+
+.dates .gradient-primary .bgpic {
+    position: absolute;
+    top: 45%;
+    right: 0;
+}
+
+.dates .gradient-purple .bgpic {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.dates .gradient-orange,
+.dates .gradient-danger {
+    align-items: center;
+}
+
+.dates .gradient-orange .bgpic,
+.dates .gradient-danger .bgpic {
+    position: absolute;
+    right: 0;
+}
+
+.analytics {
+    margin-top: 26px;
+}
+
+.analytics .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 824px;
+    height: 300px;
+    margin: 0 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+.analytics .card-title {
+    margin-top: 15px;
+    font-weight: 900;
+    font-size: 38px;
+    line-height: 45px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.analytics .omuc {
+    background-size: 522px 110px;
+    background: var(--card-bg) url("./assets/omuc.png") no-repeat center 35px;
+    box-shadow: inset 0 0 70px 50px var(--card-bg);
+}
+
+.analytics .card-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.analytics .omuc .card-flex {
+    justify-content: space-between;
+    position: absolute;
+    left: 40px;
+    right: 40px;
+    bottom: 50px;
+}
+
+.analytics .omuc .title {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.analytics .omuc .count {
+    margin-top: 26px;
+    color: var(--default-color-300);
+    font-size: 48px;
+    font-weight: 900;
+}
+
+
+.counts {
+    margin-top: 26px;
+}
+
+.counts .card {
+    display: flex;
+    width: 824px;
+    height: 240px;
+    margin: 0 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+.counts .row {
+    flex-direction: row;
+    position: absolute;
+    right: 30px;
+}
+
+.counts .count {
+    margin: 15px 0 10px;
+    flex-grow: 0;
+}

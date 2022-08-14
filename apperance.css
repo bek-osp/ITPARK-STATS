@@ -1,0 +1,15 @@
+.day {
+    --body-bg: #F8F8F8;
+    --card-bg: #fff;
+    --default-color: #000;
+    --default-color-300: #333;
+    --app-logo: url("./assets/itpark.svg");
+}
+
+.night {
+    --body-bg: #132138;
+    --card-bg: #24345F;
+    --default-color: #fff;
+    --default-color-300: #ccc;
+    --app-logo: url("./assets/it-park.svg");
+}
