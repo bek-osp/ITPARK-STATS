@@ -267,6 +267,12 @@ body {
     text-transform: uppercase;
 }
 
+.card-flex .left-column,
+.card-flex .right-column {
+    width: 366px !important;
+    height: 204px !important;
+}
+
 .analytics .omuc {
     background-size: 522px 110px;
     background: var(--card-bg) url("./assets/omuc.png") no-repeat center 35px;

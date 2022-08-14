@@ -285,10 +285,12 @@
                 <div class="card-title">It-ШКОЛЫ</div>
                 <div class="card-flex">
                     <div class="left-column">
-                        <div class="title">Стартап-проекты</div>
+                        <div class="school-stat">
+                            <canvas id="employeeStats" style="width:100%;max-width:600px;height:204px !important;"></canvas>
+                        </div>
                     </div>
                     <div class="right-column">
-                        <div class="title">Ученики</div>
+                        <canvas id="studentStats" style="width:100%;max-width:600px;height:204px"></canvas>
                     </div>
                 </div>
             </div>
@@ -333,6 +335,8 @@
             </div>
         </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
     <script>
         function themeMode() {
@@ -381,6 +385,74 @@
 
         showTime();
         themeMode();
+
+        var xValues = [];
+        var yValues = [];
+        generateData("Math.sin(x)", 0, 10, 0.5);
+
+        var ctx = document.getElementById("studentStats").getContext('2d');
+        const gradeintBg = ctx.createLinearGradient(0, 0, 0, 400);
+
+        gradeintBg.addColorStop(1, 'rgba(28, 123, 239, 1)');
+        gradeintBg.addColorStop(0.16, 'rgba(28, 123, 239, 0.16)');
+        gradeintBg.addColorStop(0, 'rgba(28, 123, 239, 0)');
+
+        new Chart(ctx, {
+            type: "line",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    tension: 0.4,
+                    fill: true,
+                    backgroundColor: gradeintBg,
+                    borderColor: "rgba(0,0,255,0.5)",
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: {display: false},
+                title: {
+                    display: true,
+                    text: "Ученики",
+                    fontSize: 24
+                }
+            }
+        });
+        function generateData(value, i1, i2, step = 1) {
+            for (let x = i1; x <= i2; x += step) {
+                yValues.push(eval(value));
+                xValues.push(x);
+            }
+        }
+
+        var xValuesS = [50,60,70,80,90,100,110,120,130,140,150];
+        var yValuesS = [7,8,8,9,9,9,10,11,14,14,15];
+
+        new Chart("employeeStats", {
+            type: "line",
+            data: {
+                labels: xValuesS,
+                datasets: [{
+                    fill: false,
+                    pointRadius: 0,
+                    lineTension: 0,
+                    backgroundColor: "rgba(0, 119, 255, 0)",
+                    borderColor: "rgba(0, 119, 255, 1)",
+                    data: yValuesS,
+                }]
+            },
+            options: {
+                legend: {display: false},
+                title: {
+                    display: true,
+                    text: "Стартап-проекты",
+                    fontSize: 24
+                },
+                scales: {
+                    yAxes: [{ticks: {min: 6, max:16}}],
+                }
+            }
+        });
     </script>
 </body>
 </html>
