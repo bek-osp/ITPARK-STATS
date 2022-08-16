@@ -4,6 +4,9 @@
     --default-color: #000;
     --default-color-300: #333;
     --app-logo: url("./assets/itpark.svg");
+    --gradient-success: linear-gradient(180deg, #77C205 0%, #B3DF07 100%);
+    --gradient-pink: linear-gradient(180deg, #8C5EF8 0%, #BD80E0 100%);
+    --chart-color: #333;
 }
 
 .night {
@@ -12,4 +15,7 @@
     --default-color: #fff;
     --default-color-300: #ccc;
     --app-logo: url("./assets/it-park.svg");
+    --gradient-success: linear-gradient(90deg, #77C205 0%, #B3DF07 100%);
+    --gradient-pink: linear-gradient(90deg, #8C5EF8 0%, #BD80E0 100%);
+    --chart-color: #fff;
 }

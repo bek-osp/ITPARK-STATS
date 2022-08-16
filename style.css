@@ -89,7 +89,7 @@ body {
 }
 
 .card.timer .clock {
-    color: var(--default-color-300);
+    color: var(--default-color);
     font-size: 60px;
     font-family: Digital;
     letter-spacing: 7px;
@@ -97,7 +97,7 @@ body {
 
 .card.timer .title {
     display: flex;
-    color: var(--default-color-300);
+    color: var(--default-color);
     flex-grow: 0;
     align-items: flex-start;
     font-size: 26px;
@@ -142,7 +142,7 @@ body {
 .branches .card-body .count {
     font-size: 48px;
     font-weight: 800;
-    color: var(--default-color-300);
+    color: var(--default-color);
 }
 
 .container {
@@ -276,7 +276,7 @@ body {
 .analytics .omuc {
     background-size: 522px 110px;
     background: var(--card-bg) url("./assets/omuc.png") no-repeat center 35px;
-    box-shadow: inset 0 0 70px 50px var(--card-bg);
+    box-shadow: inset 0 0 70px 30px var(--card-bg);
 }
 
 .analytics .card-flex {
@@ -290,7 +290,7 @@ body {
     position: absolute;
     left: 40px;
     right: 40px;
-    bottom: 50px;
+    bottom: 25px;
 }
 
 .analytics .omuc .title {
@@ -300,23 +300,41 @@ body {
 
 .analytics .omuc .count {
     margin-top: 26px;
-    color: var(--default-color-300);
+    color: var(--default-color);
     font-size: 48px;
     font-weight: 900;
 }
-
 
 .counts {
     margin-top: 26px;
 }
 
+.counts .card.slider {
+    width: 632px;
+}
+
+.counts .card.slider .card-body {
+    top: 21px;
+    left: 21px;
+}
+
 .counts .card {
     display: flex;
-    width: 824px;
+    width: 523px;
     height: 240px;
-    margin: 0 50px;
+    margin: 0 17px;
     overflow: hidden;
     position: relative;
+}
+
+.counts .card-body.right {
+    align-items: flex-end;
+    right: 35px;
+}
+
+.counts .card-body {
+    top: 20px;
+    left: 35px;
 }
 
 .counts .row {
@@ -325,7 +343,55 @@ body {
     right: 30px;
 }
 
+.counts .right .column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.counts .column + .column {
+    margin-top: 25px;
+}
+
 .counts .count {
-    margin: 15px 0 10px;
+    margin-top: 10px;
     flex-grow: 0;
+}
+
+.counts .qr-code {
+    background: #fff;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.counts .it-facts {
+    width: 340px;
+    height: 200px;
+    color: var(--default-color);
+    margin-left: 35px;
+    overflow: hidden;
+}
+
+.counts .it-facts .title {
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 900;
+    margin-top: 10px;
+}
+
+.counts .it-facts .fact {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 340px;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.counts .qr-code .qr-pic{
+    width: 100%;
+    height: 100%;
 }
