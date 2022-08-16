@@ -113,7 +113,7 @@ new Chart(ctx, {
             fill: true,
             // pointRadius: 0,
             backgroundColor: gradeintBg,
-            borderColor: "rgba(0,0,255,0.5)",
+            borderColor: "rgba(0, 119, 255, 1)",
             data: yValues
         }]
     },
@@ -123,7 +123,6 @@ new Chart(ctx, {
             display: true,
             text: "Ученики",
             fontSize: 24,
-            pointBackgroundColor: "var(--chart-color)",
         },
         scales: {
             yAxes: [
@@ -175,7 +174,6 @@ new Chart("employeeStats", {
             display: true,
             text: "Стартап-проекты",
             fontSize: 24,
-            pointBackgroundColor: "var(--chart-color)",
         },
         scales: {
             yAxes: [
