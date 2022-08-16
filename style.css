@@ -273,9 +273,11 @@ body {
     height: 204px !important;
 }
 
+.analytics .omuc svg {
+    margin-top: 25px;
+}
+
 .analytics .omuc {
-    background-size: 522px 110px;
-    background: var(--card-bg) url("./assets/omuc.png") no-repeat center 35px;
     box-shadow: inset 0 0 70px 30px var(--card-bg);
 }
 

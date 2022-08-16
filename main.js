@@ -54,6 +54,17 @@ function themeMode() {
     setTimeout(showTime, 1000);
 }
 
+var calendar = new Date();
+var options = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+};
+var dateRu = calendar.toLocaleString("ru", options);
+
+document.getElementById("calendar").innerText = dateRu;
+document.getElementById("calendar").textContent = dateRu;
+
 function showTime(){
     var date = new Date();
     var year = date.getFullYear(); //

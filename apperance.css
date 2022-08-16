@@ -7,6 +7,9 @@
     --gradient-success: linear-gradient(180deg, #77C205 0%, #B3DF07 100%);
     --gradient-pink: linear-gradient(180deg, #8C5EF8 0%, #BD80E0 100%);
     --chart-color: #333;
+    --omuc-color: #1E6A96;
+    --omuc-one-color: #00A1FF;
+    --omuc-opacity: 0.3;
 }
 
 .night {
@@ -18,4 +21,7 @@
     --gradient-success: linear-gradient(90deg, #77C205 0%, #B3DF07 100%);
     --gradient-pink: linear-gradient(90deg, #8C5EF8 0%, #BD80E0 100%);
     --chart-color: #fff;
+    --omuc-color: #2785bc;
+    --omuc-one-color: #5ac2ff;
+    --omuc-opacity: 0.5;
 }
