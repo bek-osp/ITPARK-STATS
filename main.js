@@ -32,12 +32,15 @@ const itFacts = new Swiper ('.facts', {
     },
 });
 
-function themeMode() {
-    var date = new Date();
-    var h = date.getHours();
-    h = (h < 10) ? "0" + h : h;
+let chartColor,
+    chartGridColor;
 
-    hours = ["00", "01", "02", "03", "04", "05", "06", "07", 18, 19, 20, 21, 22, 23];
+function themeMode() {
+    let date = new Date(),
+        h = date.getHours(),
+        hours = ["00", "01", "02", "03", "04", "05", "06", "07", 18, 19, 20, 21, 22, 23];
+
+    h = (h < 10) ? "0" + h : h;
 
     if (hours.includes(h)) {
         document.body.classList.remove("day");
@@ -51,7 +54,7 @@ function themeMode() {
         chartGridColor = "rgba(0,0,0,0.15)";
     }
 
-    setTimeout(showTime, 1000);
+    setTimeout(themeMode, 1000);
 }
 
 var calendar = new Date();
@@ -66,18 +69,20 @@ document.getElementById("calendar").innerText = dateRu;
 document.getElementById("calendar").textContent = dateRu;
 
 function showTime(){
-    var date = new Date();
-    var year = date.getFullYear(); //
-    var month = date.getMonth(); // 1 - 12
-    var day = date.getDay(); // 0 - 23
-    date.setHours(21);
-    var h = date.getHours(); // 0 - 23
-    var m = date.getMinutes(); // 0 - 59
-    var s = date.getSeconds(); // 0 - 59
+    const date = new Date();
+
+    date.setMonth(date.getMonth() + 1);
+    date.setHours(date.getHours() + 6);
+    date.setDate(date.getDay() + 1);
+
+    let year = date.getFullYear(),
+        month = date.getMonth(),
+        day = date.getDay(),
+        h = date.getHours(),
+        m = date.getMinutes(),
+        s = date.getSeconds();
 
     year = year - 2019;
-    month = (month != 12) ? month + 1 : 1;
-    day = (day < 10) ? day : day;
     h = (h < 10) ? "0" + h : h;
     m = (m < 10) ? "0" + m : m;
     s = (s < 10) ? "0" + s : s;
@@ -93,12 +98,11 @@ function showTime(){
 showTime();
 themeMode();
 
-var xValues = [];
-var yValues = [];
-generateData("Math.sin(x)", 0, 10, 0.5);
+var xValues = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+var yValues = [6623,7515,7515,9081,8153,9081,10102,12303,14717,9515,14717,10102];
 
 var ctx = document.getElementById("studentStats").getContext('2d');
-const gradeintBg = ctx.createLinearGradient(0, 0, 0, 400);
+const gradeintBg = ctx.createLinearGradient(0, 0, 400, 500);
 
 gradeintBg.addColorStop(1, 'rgba(28, 123, 239, 1)');
 gradeintBg.addColorStop(0.16, 'rgba(28, 123, 239, 0.16)');
@@ -145,12 +149,6 @@ new Chart(ctx, {
         }
     }
 });
-function generateData(value, i1, i2, step = 1) {
-    for (let x = i1; x <= i2; x += step) {
-        yValues.push(eval(value));
-        xValues.push(x);
-    }
-}
 
 var xValuesS = [50,60,70,80,90,100,110,120,130,140,150];
 var yValuesS = [7,8,8,9,9,9,10,11,14,14,15];

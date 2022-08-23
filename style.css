@@ -271,6 +271,7 @@ body {
 .card-flex .right-column {
     width: 366px !important;
     height: 204px !important;
+    margin: 0 15px !important;
 }
 
 .analytics .omuc svg {
