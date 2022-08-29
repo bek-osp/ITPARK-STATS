@@ -89,10 +89,28 @@ body {
 }
 
 .card.timer .clock {
+    display: flex;
+    justify-content: center;
     color: var(--default-color);
     font-size: 60px;
-    font-family: Digital;
+    font-family: Digital, sans-serif;
     letter-spacing: 7px;
+}
+
+.card.timer .clock .clock-item + .clock-item {
+    margin-left: 15px;
+}
+
+.card.timer .clock .clock-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card.timer .clock .clock-item span {
+    margin-left: 2px;
+    letter-spacing: 1px;
+    font-size: 20px;
 }
 
 .card.timer .title {

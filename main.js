@@ -39,8 +39,7 @@ function themeMode() {
     let date = new Date(),
         h = date.getHours(),
         hours = ["00", "01", "02", "03", "04", "05", "06", "07", 18, 19, 20, 21, 22, 23];
-
-    h = (h < 10) ? "0" + h : h;
+        h = (h < 10) ? "0" + h : h;
 
     if (hours.includes(h)) {
         document.body.classList.remove("day");
@@ -87,9 +86,13 @@ function showTime(){
     m = (m < 10) ? "0" + m : m;
     s = (s < 10) ? "0" + s : s;
 
-    var time = year + " : " + month + " : "  + day + " : "  + h + " : " + m + " : " + s;
-    document.getElementById("MyClockDisplay").innerText = time;
-    document.getElementById("MyClockDisplay").textContent = time;
+    document.getElementById("itClock").innerHTML =
+        "<div class='clock-item'>" + year + "<span>год</span></div>&nbsp;:" +
+        "<div class='clock-item'>" + month + "<span>мес</span></div>&nbsp;:" +
+        "<div class='clock-item'>" + day + "<span>день</span></div>&nbsp;:" +
+        "<div class='clock-item'>" + h + "<span>час</span></div>&nbsp;:" +
+        "<div class='clock-item'>" + m + "<span>мин</span></div>&nbsp;:" +
+        "<div class='clock-item'>" + s + "<span>сек</span></div>";
 
     setTimeout(showTime, 1000);
 
@@ -99,7 +102,7 @@ showTime();
 themeMode();
 
 var xValues = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-var yValues = [6623,7515,7515,9081,8153,9081,10102,12303,14717,9515,14717,10102];
+var yValues = [9014, 7515, 9785, 12187, 10715, 10535, 12303, 11752, 12535, 13210,13517,14717];
 
 var ctx = document.getElementById("studentStats").getContext('2d');
 const gradeintBg = ctx.createLinearGradient(0, 0, 400, 500);
@@ -150,16 +153,14 @@ new Chart(ctx, {
     }
 });
 
-var xValuesS = [50,60,70,80,90,100,110,120,130,140,150];
-var yValuesS = [7,8,8,9,9,9,10,11,14,14,15];
+var xValuesS = [2016, 2017,2018,2019,2020,2021,2022];
+var yValuesS = [0,200,400,500,600,700,800,900];
 
 new Chart("employeeStats", {
     type: "line",
     data: {
         labels: xValuesS,
         datasets: [{
-            fill: false,
-            // pointRadius: 0,
             lineTension: 0,
             backgroundColor: "rgba(0, 119, 255, 0)",
             borderColor: "rgba(0, 119, 255, 1)",
@@ -177,8 +178,8 @@ new Chart("employeeStats", {
             yAxes: [
                 {
                     ticks: {
-                        min: 6,
-                        max:16
+                        min: 0,
+                        max: 1000
                     },
                     gridLines: {
                         display: true ,
